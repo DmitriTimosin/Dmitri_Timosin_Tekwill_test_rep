@@ -1,5 +1,8 @@
 package homework_nr_5;
 
+import java.math.BigInteger;
+
+
 public class HomeworkNr5 {
     public static void main(String[] args) {
         int[] array = new int[100];
@@ -12,15 +15,22 @@ public class HomeworkNr5 {
             if (array[i] < 10) System.out.print(" ");
         }
         int sum = 0;
-        long multiply = 1;
+        /*long multiply = 1;
         for (int i = 0; i < array.length; i++){
             if ((i % 2) == 0) sum += array[i];
             if ((i % 2) != 0) multiply *= array[i];
+        }*/
+
+        BigInteger mult = new BigInteger("1");
+
+        for (int i = 0; i < array.length; i++){
+            if ((i % 2) == 0) sum += array[i];
+            if ((i % 2) != 0) mult = mult.multiply(BigInteger.valueOf(array[i]));
         }
         System.out.println();
         System.out.println("------------------------------");
         System.out.println("Sum of even array values is " + sum);
-        System.out.println("Multiply of odd array values is " + multiply);
+        System.out.println("Multiply of odd array values is " + mult);
         System.out.println();
         System.out.println("------------------------------");
 
