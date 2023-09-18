@@ -8,7 +8,5 @@ public class TemperatureConverter {
     public static float toFahrenheit(float grad){
         return (grad*9/5+32);
     }
-    public static void main(String[] args) {
 
-    }
 }
